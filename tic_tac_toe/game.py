@@ -1,29 +1,25 @@
 import time
 from player import HumanPlayer, RandomComputerPlayer
 
-class TicTacToe:
+class TicTacToe():
     def __init__(self):
-        self.board = [" " for _ in range(9)]
+        self.board = self.make_board()
         self.current_winner = None
 
+    @staticmethod
+    def make_board():
+        return [" " for _ in range(9)]
+
     def print_board(self):
-        for row in [self.board[i*3:(i+1)*3] for i in range(3)]:
+        for row in [self.board[i*3:(i+1) * 3] for i in range(3)]:
             print("| " + " | ".join(row) + " |")
 
     @staticmethod
     def print_board_nums():
+        # 0 | 1 | 2
         number_board = [[str(i) for i in range(j*3, (j+1)*3)] for j in range(3)]
         for row in number_board:
             print("| " + " | ".join(row) + " |")
-
-    def available_moves(self):
-        return [i for i, spot in enumerate(self.baord) if spot == " "]
-
-    def empty_squares(self):
-        return " " in self.board
-
-    def num_empty_squares(self):
-        return self.board.count(" ")
 
     def make_move(self, square, letter):
         if self.board[square] == " ":
@@ -32,7 +28,7 @@ class TicTacToe:
                 self.current_winner = letter
             return True
         return False
-    
+
     def winner(self, square, letter):
         # Check for 3 in a row anywhere
         # Check row
@@ -48,7 +44,7 @@ class TicTacToe:
         # Check diagonal
         # only if square is an even number
         # these are the only moves possible to win a diagonal
-        if square % 2 ==0:
+        if square % 2 == 0:
             diagonal1 = [self.board[i] for i in [0,4,8]]
             if all([spot == letter for spot in diagonal1]):
                 return True
@@ -58,7 +54,15 @@ class TicTacToe:
 
         # if all checks fail you don't have a winner
         return False
-        
+
+    def empty_squares(self):
+        return " " in self.board
+
+    def num_empty_squares(self):
+        return self.board.count(" ")
+
+    def available_moves(self):
+        return [i for i, x in enumerate(self.board) if x == " "]
 
 def play(game, x_player, o_player, print_game=True):
     if print_game:
