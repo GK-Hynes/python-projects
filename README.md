@@ -8,3 +8,4 @@ Small projects to practice Python. Based off Kylie Ying's [12 Beginner Python Pr
 - Rock Paper Scissors
 - Hangman
 - Tic Tac Toe
+- Tic Tac Toe (unbeatable AI)
