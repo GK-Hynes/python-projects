@@ -10,3 +10,4 @@ Small projects to practice Python. Based off Kylie Ying's [12 Beginner Python Pr
 - Tic Tac Toe
 - Tic Tac Toe (unbeatable AI)
 - Binary Search
+- Minesweeper
