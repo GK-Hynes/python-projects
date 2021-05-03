@@ -12,3 +12,4 @@ Small projects to practice Python. Based off Kylie Ying's [12 Beginner Python Pr
 - Binary Search
 - Minesweeper
 - Sudoku Solver
+- Photo Manipulation
