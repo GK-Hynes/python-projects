@@ -19,7 +19,7 @@ class Vertex(object):
     def get_adjacent_nodes(self):
         return self.adjacent.keys()
 
-    # initializes probability map
+    # Initializes probability map
     def get_probability_map(self):
         for (vertex, weight) in self.adjacent.items():
             self.neighbors.append(vertex)

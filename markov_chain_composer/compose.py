@@ -26,9 +26,13 @@ def make_graph(words):
     previous_word = None
 
     for word in words:
+        # Check if word is in graph and if not, add it
         word_vertex = g.get_vertex(word)
 
+        # If there was a previous word, add an edge if it doens't exist
+        # If it exists, increment weight by 1
         if previous_word:
+            # Check if edge exists from previous word to current word
             previous_word.increment_edge(word_vertex)
 
         previous_word = word_vertex
